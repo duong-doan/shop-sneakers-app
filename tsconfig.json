@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "es2015",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -20,5 +19,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "config"]
+  "include": ["src", "config"],
+"allowJs": true,
 }
