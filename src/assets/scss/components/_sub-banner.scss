@@ -1,0 +1,66 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.sub-banner {
+  @include flexCenter;
+  flex-direction: column;
+
+  padding: 6rem 0 8rem;
+  background-color: $bg-sub-banner;
+  border-top: 1px solid $border-color-icon-header;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  h1 {
+    color: $white-smoke;
+    text-align: center;
+  }
+
+  .breadcrumb {
+    background: none;
+    @include flexNoJust;
+
+    li {
+      span {
+        @include attrFont(1rem, 500);
+        color: $text-color-sub;
+      }
+
+      a {
+        text-decoration: none;
+        @include attrFont(1rem, 500);
+        color: $text-color-sub;
+
+        &:hover {
+          color: $white-smoke;
+          transition: all 0.2s;
+        }
+      }
+
+      i {
+        @include attrFontColor(0.6rem, $text-color-sub);
+        margin: 0 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .subbanner {
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 319px) and (max-width: 767px) {
+  .subbanner {
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}

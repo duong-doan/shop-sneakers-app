@@ -1,0 +1,199 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.sidebar__category {
+  .category__header {
+    @include flexBetween;
+    padding: 2rem 1.8rem;
+
+    .header__wrap {
+      display: flex;
+      i {
+        margin-right: 1rem;
+      }
+      h6 {
+        margin: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        h6,
+        i {
+          color: $text-color-sub;
+          transition: all 0.2s;
+        }
+      }
+    }
+
+    span {
+      @include attrFont(1rem, 500);
+      color: $text-color-sub;
+      cursor: pointer;
+    }
+  }
+
+  .category__body__list {
+    padding: 0 3.6rem;
+    transition: all 0.2s;
+
+    .category__item {
+      @include flexBetween;
+
+      p {
+        @include attrFont(1rem, 500);
+
+        margin: 0.6rem 0;
+        color: $text-color-main;
+        text-decoration: none;
+        &:hover {
+          cursor: pointer;
+          transform: translateX(10px);
+          transition: all 0.4s;
+          color: $text-color-sub;
+        }
+      }
+      span {
+        @include attrFont(1rem, 500);
+        color: $text-color-sub;
+      }
+    }
+  }
+
+  .category__body__price {
+    padding: 0 3.6rem;
+
+    .input-range {
+      margin: 2rem 0;
+
+      .input-range__label {
+        display: none;
+      }
+    }
+
+    .category__price__value {
+      @include flexBetween;
+
+      input {
+        padding: 0.6rem 1rem;
+        width: 45%;
+
+        font-size: 1rem;
+
+        border: 1px solid $box-shadow;
+        border-radius: 30px;
+      }
+    }
+  }
+
+  .category__body__checkbox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 3.6rem;
+
+    .form-group {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        @include attrFont(1rem, 500);
+        &:hover {
+          cursor: pointer;
+          color: $text-color-sub;
+          transition: all 0.3s;
+        }
+      }
+      .form-check-input {
+        position: static;
+        @include attrBox(16px, 16px);
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .category__body__color {
+    @include flexCenter;
+
+    flex-wrap: wrap;
+    padding: 0 3.6rem;
+
+    .color-item {
+      @include attrBox(30px, 30px);
+
+      position: static;
+      margin: 0 0.8rem 0.8rem 0;
+
+      border-radius: 50%;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+      @include flexCenter;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      i {
+        color: $box-shadow;
+      }
+    }
+
+    .circle {
+      @include attrBox(30px, 30px);
+      margin: 0 0.8rem 0.8rem 0;
+
+      background: conic-gradient(
+        #9ed110,
+        #50b517,
+        #179067,
+        #476eaf,
+        #9f49ac,
+        #cc42a2,
+        #ff3ba7,
+        #ff5800,
+        #ff8100,
+        #feac00,
+        #ffcc00,
+        #ede604
+      );
+      border-radius: 50%;
+
+      @include flexCenter;
+
+      i {
+        display: none;
+      }
+    }
+  }
+
+  .category__body__table {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0 3.6rem;
+    margin-bottom: 2rem;
+
+    .table__item {
+      @include attrBox(50px, 50px);
+      @include attrFont(1rem, 500);
+      @include flexCenter;
+      border: 1px solid $text-color-sub;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .click__table__item {
+        transform: scale(0);
+        transition: all 0.2s;
+        @include attrColor($primary-color, $white-smoke);
+        @include flexCenter;
+        @include positionAbsoluteAll;
+      }
+    }
+  }
+}

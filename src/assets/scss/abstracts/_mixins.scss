@@ -1,0 +1,123 @@
+// position
+@mixin center($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-$left, -$top);
+}
+
+@mixin positionAbsoluteAll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin positionAbsoluteTL($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin positionAbsoluteTR($top, $right) {
+  position: absolute;
+  top: $top;
+  right: $right;
+}
+
+@mixin positionRelativeTL($top, $left) {
+  position: relative;
+  top: $top;
+  left: $left;
+}
+
+@mixin positionRelativeTR($top, $right) {
+  position: relative;
+  top: $top;
+  right: $right;
+}
+
+@mixin positionFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+// flex
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexNoJust {
+  display: flex;
+  align-items: center;
+}
+
+// font and color
+
+@mixin attrFont($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin attrFontColor($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+@mixin totalFontColor($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin attrColor($bgColor, $color) {
+  background-color: $bgColor;
+  color: $color;
+}
+
+// box model
+
+@mixin attrBox($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin customBtn {
+  outline: none;
+  border: none;
+}
+
+// border and bgColor
+
+@mixin bgColorFtBorderRadius($bgColor, $borderRadius) {
+  background-color: $bgColor;
+  border-radius: $borderRadius;
+}
+
+@mixin borderFtBorderRadius($color, $borderRadius) {
+  border: 1px solid $color;
+  border-radius: $borderRadius;
+}
+
+// vertical line
+
+@mixin verticalLine($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

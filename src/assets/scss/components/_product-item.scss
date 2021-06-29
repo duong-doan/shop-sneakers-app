@@ -1,0 +1,193 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.product-item {
+  @include attrBox(25%, 375px);
+  @include flexCenter;
+  position: relative;
+
+  .product-item__wrap {
+    width: 100%;
+
+    img {
+      @include attrBox(80%, 205px);
+      @include flexCenter;
+      margin: 0 auto;
+      @include attrColor($background-black, $white-smoke);
+    }
+
+    .product-item__wrap__info {
+      width: 80%;
+      text-align: left;
+      margin: 1rem auto 0;
+
+      span {
+        @include totalFontColor(1rem, 500, $text-color-price);
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    .product-item__hover {
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.4);
+      transform: scaleY(1);
+    }
+  }
+
+  .product-item__hover {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease-out;
+    transform: scaleY(0);
+    transform-origin: 0 bottom 0;
+
+    @include positionAbsoluteAll;
+    background-color: $primary-color;
+
+    h6 {
+      @include positionAbsoluteTL(12%, 12%);
+      color: $white-smoke;
+    }
+
+    button {
+      @include positionAbsoluteTL(40%, 12%);
+      @include customBtn;
+      @include attrFont(1rem, 500);
+      padding: 0.8rem 2.4rem;
+      border-radius: 30px;
+      transition: all 0.2s;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+
+      i {
+        margin-right: 0.6rem;
+      }
+
+      &:hover {
+        @include attrColor($primary-color, $white-smoke);
+        box-shadow: 0 0 15px rgba($color: #fff, $alpha: 1);
+      }
+    }
+
+    .hover__icon--copy {
+      @include positionAbsoluteTL(40%, 58%);
+      @include attrBox(50px, 50px);
+      @include flexCenter;
+
+      background-color: #546bd9;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+
+      i {
+        @include attrFontColor(1rem, $white-smoke);
+      }
+
+      &:hover {
+        background-color: $white-smoke;
+        box-shadow: 0 0 15px rgba($color: #fff, $alpha: 1);
+        i {
+          @include attrFontColor(1rem, $primary-color);
+        }
+      }
+    }
+
+    .hover__icon--heart {
+      @include positionAbsoluteTR(40%, 12%);
+      @include attrBox(50px, 50px);
+      @include flexCenter;
+      @include bgColorFtBorderRadius(#546bd9, 50%);
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+
+      i {
+        @include attrFontColor(1rem, $white-smoke);
+      }
+
+      &:hover {
+        background-color: $white-smoke;
+        box-shadow: 0 0 15px rgba($color: #fff, $alpha: 1);
+        i {
+          @include attrFontColor(1rem, $primary-color);
+        }
+      }
+    }
+
+    h4 {
+      @include positionAbsoluteTL(70%, 12%);
+      @include attrFontColor(1.2rem, $white-smoke);
+    }
+
+    span {
+      @include positionAbsoluteTL(78%, 12%);
+      @include attrFontColor(1rem, $white-smoke);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-item {
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .product-item {
+    width: 100%;
+
+    .product-item__wrap {
+      @include attrBox(100%, 100%);
+      @include flexCenter;
+      flex-direction: column;
+
+      .product-item__fake-img {
+        @include attrBox(80%, 60%);
+        padding: 1rem 0;
+        @include flexCenter;
+      }
+    }
+
+    .product-item__hover {
+      .hover__icon--heart {
+        @include positionAbsoluteTL(40%, 78%);
+      }
+    }
+  }
+}
+
+@media (min-width: 319px) and (max-width: 767px) {
+  .product-item {
+    width: 100%;
+
+    .product-item__wrap {
+      @include attrBox(100%, 100%);
+      @include flexCenter;
+      flex-direction: column;
+
+      .product-item__fake-img {
+        @include attrBox(80%, 60%);
+        padding: 1rem 0;
+        @include flexCenter;
+      }
+    }
+
+    .product-item__hover {
+      button {
+        @include positionAbsoluteTL(30%, 50%);
+        transform: translateX(-50%);
+      }
+
+      .hover__icon--copy {
+        @include positionAbsoluteTL(50%, 28%);
+      }
+
+      .hover__icon--heart {
+        @include positionAbsoluteTL(50%, 55%);
+      }
+
+      span {
+        @include positionAbsoluteTL(85%, 12%);
+      }
+    }
+  }
+}

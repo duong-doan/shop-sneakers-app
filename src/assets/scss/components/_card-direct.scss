@@ -1,0 +1,55 @@
+@import '../abstracts/mixins';
+
+.card-direct {
+  @include attrBox(25%, auto);
+  @include flexCenter;
+  padding: 2rem;
+  background-color: $background-black;
+  flex-direction: column;
+
+  img {
+    @include attrBox(50px, 50px);
+  }
+
+  h3 {
+    @include attrFontColor(1.4rem, $white-smoke);
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  p {
+    @include attrFontColor(1rem, $text-color-sub);
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    @include attrFontColor(1rem, $white-smoke);
+    margin-top: 1rem;
+
+    i {
+      margin-left: 0.4rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-direct {
+    @include attrBox(25%, auto);
+    padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card-direct {
+    @include attrBox(50%, auto);
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 767px) {
+  .card-direct {
+    @include attrBox(100%, auto);
+    padding: 1rem 0;
+  }
+}

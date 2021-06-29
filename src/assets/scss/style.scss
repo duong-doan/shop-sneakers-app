@@ -1,0 +1,23 @@
+//components
+@import './components/banner';
+@import './components/sub-banner';
+@import './components/product-item';
+@import './components/global-scale-box';
+@import './components/category-sidebar';
+@import './components/card-direct';
+
+//layouts
+@import './layouts/header';
+@import './layouts/main';
+@import './layouts/footer';
+@import './layouts/product';
+@import './layouts/category';
+@import './layouts/cart';
+@import './layouts/form-register';
+@import './layouts/form-login';
+
+//base
+@import './base/reset';
+
+//abstracts
+@import './abstracts/mixins';

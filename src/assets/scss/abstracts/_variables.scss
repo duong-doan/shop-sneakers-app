@@ -1,0 +1,82 @@
+////////// COLOR SYSTEM //////////
+
+$blue: #5e50f9;
+$indigo: #6610f2;
+$purple: #6a008a;
+$pink: #e91e63;
+$red: #f96868;
+$orange: #f2a654;
+$yellow: #f6e84e;
+$green: #46c35f;
+$teal: #58d8a3;
+$cyan: #57c7d4;
+$black: #000;
+$white: #ffffff;
+$white-smoke: #f2f7f8;
+$violet: #41478a;
+$darkslategray: #2e383e;
+$dodger-blue: #3498db;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: #434a54,
+  gray-light: #aab2bd,
+  gray-lighter: #e8eff4,
+  gray-lightest: #e6e9ed,
+  gray-dark: #0f1531,
+  black: #000000
+);
+
+$theme-colors: (
+  primary: #248afd,
+  secondary: #a3a4a5,
+  success: #71c016,
+  info: #68afff,
+  warning: #f5a623,
+  danger: #ff4747,
+  light: #f8f9fa,
+  dark: #282f3a
+);
+
+$theme-gradient-colors: (
+  primary: linear-gradient(230deg, #759bff, #843cf6),
+  secondary: linear-gradient(to right, #e7ebf0, #868e96),
+  success: linear-gradient(45deg, #7bffce, #30c93e),
+  info: linear-gradient(to bottom, #0e4cfd, #6a8eff),
+  warning: linear-gradient(135deg, #ffc480, #ff763b),
+  danger: linear-gradient(316deg, #fc5286, #fbaaa2),
+  light: linear-gradient(to right, #cfd9df 0%, #e2ebf0 100%),
+  dark: linear-gradient(to right, #7d7979 0%, #000000 100%)
+);
+
+////////// COLOR SYSTEM //////////
+
+////////// COLOR VARIABLES //////////
+$primary-color: #3a54d6;
+$content-bg: #dddce1;
+$border-color: #c9ccd7;
+$border-color-item: #f7f7f7;
+$background-color-hp: #454957;
+$background-black: #222222;
+$border-color-icon-header: rgba(255, 255, 255, 0.2);
+$bg-sub-banner: #3a54d6;
+$border-global: rgb(187, 185, 185);
+
+//text
+$text-color-sub: rgb(184, 183, 183);
+$text-color-main: #333;
+
+$text-color-price: #3a54d6;
+
+//box shadow
+$box-shadow: rgba(0, 0, 0, 0.5);

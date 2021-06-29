@@ -1,0 +1,222 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.footer {
+  @include positionRelativeTL(120px, 0);
+  right: 0;
+  z-index: 1;
+  background-color: #222222;
+
+  .footer__subcribe {
+    @include flexCenter;
+    text-align: center;
+    background-image: url('../images/bg-subcribe.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .footer__subcribe__wrap {
+      margin: 7.8rem 0;
+      p {
+        width: 700px;
+        margin: 2rem auto 4rem;
+        @include totalFontColor(1rem, 500, $text-color-sub);
+      }
+
+      .subcribe__wrap__form {
+        width: 500px;
+        position: relative;
+        margin: auto;
+
+        input {
+          @include customBtn;
+          width: 100%;
+          padding: 1rem 2rem;
+          margin: 0 auto;
+          border-radius: 30px;
+          font-size: 1rem;
+          box-shadow: 0 0 10px 2px $text-color-sub;
+        }
+        i {
+          @include positionAbsoluteTR(50%, 6%);
+          @include attrFontColor(1rem, $blue);
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .footer__main {
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer__main__wrap {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: auto;
+      padding: 8rem 0;
+
+      .footer__main__info {
+        h4 {
+          color: $white-smoke;
+        }
+
+        p {
+          @include attrFontColor(1rem, #4c4c4c);
+          margin: 2rem 0;
+        }
+
+        ul {
+          display: flex;
+
+          li {
+            margin-right: 1rem;
+            @include attrFontColor(1rem, #838383);
+          }
+        }
+
+        span {
+          @include attrFontColor(1rem, #4c4c4c);
+        }
+      }
+
+      .footer__main__help,
+      .footer__main__about {
+        h5 {
+          color: $white-smoke;
+        }
+
+        ul {
+          color: #838383;
+
+          li {
+            margin: 1rem 0;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .footer__main__social {
+        .social {
+          @include flexNoJust;
+
+          li {
+            margin-left: 2rem;
+            font-size: 1rem;
+
+            i {
+              color: $white-smoke;
+            }
+          }
+        }
+
+        .payment {
+          text-align: right;
+          margin-top: 6rem;
+
+          p {
+            color: #4c4c4c;
+            font-size: 1rem;
+          }
+          ul {
+            @include flexNoJust;
+            justify-content: flex-end;
+            li {
+              margin-left: 1rem;
+
+              i {
+                @include attrFontColor(1.6rem, $white-smoke);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    .footer__main__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      .footer__main__info,
+      .footer__main__help,
+      .footer__main__about,
+      .footer__main__social {
+        width: 50%;
+      }
+
+      .footer__main__social {
+        .social {
+          li {
+            margin-right: 2rem;
+            margin-left: 0 !important;
+          }
+        }
+
+        .payment {
+          p {
+            text-align: left;
+          }
+          ul {
+            justify-content: flex-start !important;
+            li {
+              margin: 0 1rem 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 319px) and (max-width: 767px) {
+  .footer {
+    .footer__subcribe {
+      width: 100%;
+
+      .footer__subcribe__wrap {
+        p {
+          width: 50%;
+        }
+
+        .subcribe__wrap__form {
+          width: 60%;
+        }
+      }
+    }
+
+    .footer__main {
+      .footer__main__wrap {
+        flex-direction: column;
+
+        .footer__main__social {
+          justify-content: flex-start;
+
+          .social {
+            li {
+              margin-left: 0;
+              margin-right: 2rem;
+            }
+          }
+
+          .payment {
+            text-align: left;
+            margin-top: 2rem;
+
+            ul {
+              justify-content: flex-start;
+              li {
+                margin-left: 0;
+                margin-right: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

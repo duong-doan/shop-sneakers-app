@@ -1,0 +1,85 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.form-register {
+  @include positionFixed;
+  transition: all 0.2s;
+  background: radial-gradient($cyan, $white-smoke);
+  background-color: $white-smoke;
+  z-index: 200;
+
+  @include flexCenter;
+  flex-direction: column;
+
+  .form-register__wrap {
+    @include bgColorFtBorderRadius($white-smoke, 10px);
+    padding: 2rem;
+    width: 30%;
+    h1 {
+      text-align: center;
+      color: $cyan;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .form-group {
+        label {
+          @include attrFont(1rem, 500);
+        }
+
+        .error-message {
+          font-size: 0.8rem;
+        }
+      }
+
+      button {
+        width: 50%;
+        margin: 0 auto;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        transition: all 0.3s;
+        font-weight: 500;
+        box-shadow: 0 0 15px $cyan;
+        @include attrColor($white-smoke, $cyan);
+        border: none;
+
+        &:hover {
+          @include attrColor($cyan, $white-smoke);
+          box-shadow: 0 0 15px $text-color-sub;
+        }
+
+        &:active {
+          background-color: $cyan !important;
+        }
+      }
+
+      a {
+        @include attrFontColor(1rem, $primary-color);
+
+        &:hover {
+          text-decoration: none;
+          color: blue;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-register {
+    .form-register__wrap {
+      width: 80%;
+    }
+  }
+}
+
+@media (min-width: 319px) and (max-width: 767px) {
+  .form-register {
+    .form-register__wrap {
+      width: 80%;
+    }
+  }
+}
